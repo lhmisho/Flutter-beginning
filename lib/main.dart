@@ -7,6 +7,12 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  
+  void answerOftheQustion() => print("Answer chossen");
+  // void answerOftheQustion(){
+  //   print("Button pressed");
+  // }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,15 +25,15 @@ class MyApp extends StatelessWidget {
             Text('The questions!'),
             RaisedButton(
               child: Text('Button 1'),
-              onPressed: null,
+              onPressed: answerOftheQustion,
             ),
             RaisedButton(
               child: Text('Button 2'),
-              onPressed: null,
+              onPressed: answerOftheQustion,
             ),
             RaisedButton(
               child: Text('Button 3'),
-              onPressed: null,
+              onPressed: answerOftheQustion,
             ),
           ],
         ),
