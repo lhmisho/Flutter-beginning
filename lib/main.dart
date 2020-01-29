@@ -6,15 +6,34 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  
-  void answerOftheQustion() => print("Answer chossen");
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
+  int indexQuestion = 0;
+
+  void answerQustion() {
+    setState(() {
+      indexQuestion += 1;
+    });
+    print(indexQuestion);
+  }
+
   // void answerOftheQustion(){
   //   print("Button pressed");
   // }
 
   @override
   Widget build(BuildContext context) {
+    var question = [
+      'What\'s your favorite IDE?',
+      'What\'s your favorite Theme?',
+    ];
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -22,10 +41,10 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text('The questions!'),
+            Text(question[indexQuestion]),
             RaisedButton(
               child: Text('Button 1'),
-              onPressed: answerOftheQustion,
+              onPressed: answerQustion,
             ),
             RaisedButton(
               child: Text('Button 2'),
@@ -33,7 +52,7 @@ class MyApp extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('Button 3'),
-              onPressed: (){
+              onPressed: () {
                 // .....
                 print("Answered question three!");
               },
